@@ -1,22 +1,8 @@
 <script setup>
-const links = [
-  {
-    label: 'Input Validation',
-    to: '/input',
-  },
-  {
-    label: 'Sample',
-    to: '/sample',
-  },
-  {
-    label: 'Select Menu',
-    to: '/selectmenu',
-  },
-];
 </script>
 
 <template>
-  <UHeader :links="links">
+  <UHeader>
     <template #logo> Nuxt UI Pro - My Sample Pages </template>
 
     <template #right>
@@ -30,7 +16,7 @@ const links = [
       <UColorModeButton />
 
       <UButton
-        to="https://github.com/nuxt-ui-pro/starter"
+        to="https://github.com/richard-edwards/my-nuxt-ui-pro-samples"
         target="_blank"
         icon="i-simple-icons-github"
         aria-label="GitHub"
