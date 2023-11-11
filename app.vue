@@ -3,42 +3,38 @@
 
 <template>
   <UHeader>
-    <template #logo> Nuxt UI Pro - My Sample Pages </template>
+    <template #logo>
+      My Nuxt UI Pro - Sample Pages
+    </template>
 
     <template #right>
-      <UButton
-        to="/"
-        icon="i-heroicons-home-solid"
-        color="gray"
-        variant="ghost"
-      />
+      <UButton to="/" icon="i-heroicons-home-solid" color="gray"
+        variant="ghost" />
 
       <UColorModeButton />
 
-      <UButton
-        to="https://github.com/richard-edwards/my-nuxt-ui-pro-samples"
-        target="_blank"
-        icon="i-simple-icons-github"
-        aria-label="GitHub"
-        color="gray"
-        variant="ghost"
-      />
+      <UButton to="https://github.com/richard-edwards/my-nuxt-ui-pro-samples"
+        target="_blank" icon="i-simple-icons-github" aria-label="GitHub"
+        color="gray" variant="ghost" />
     </template>
   </UHeader>
 
-  <UMain>
+  <NuxtLayout>
     <NuxtPage />
-    <UDivider class="mx-5 my-5" />
-    <UButton
-      label="Back Home"
-      to="/"
-      icon="i-heroicons-backspace"
-      color="gray"
-      variant="ghost"
-    />
-  </UMain>
+  </NuxtLayout>
 
   <UFooter>
-    <template #left> Copyright © {{ new Date().getFullYear() }} </template>
+    <template #left>
+      Copyright © {{ new Date().getFullYear() }}
+    </template>
   </UFooter>
+  <UNotifications>
+    <template #title="{ title }">
+      <span v-html="title" />
+    </template>
+
+    <template #description="{ description }">
+      <span v-html="description" />
+    </template>
+  </UNotifications>
 </template>
