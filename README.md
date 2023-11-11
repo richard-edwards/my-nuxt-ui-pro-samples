@@ -1,14 +1,13 @@
-![nuxt-ui-pro-starter-screenshot](https://github.com/nuxt-ui-pro/starter/assets/904724/be931063-9ab4-4a05-88cc-caada554dde2)
+# My Nuxt UI (+Pro) Samples
 
-# Nuxt UI Pro Starter
+This started off as some samples on StackBlitz and then decided to take it a little further and start organizing them a little bit for my own use, maybe they'll provide some help for others.
 
-This starter lets you get started with [Nuxt UI Pro](https://ui.nuxt.com/pro) quickly.
+My [StackBlitz project is here](https://stackblitz.com/~/github.com/richard-edwards/my-nuxt-ui-pro-samples)
 
-[![Nuxt UI Pro](https://img.shields.io/badge/Made%20with-Nuxt%20UI%20Pro-00DC82?logo=nuxt.js&labelColor=020420)](https://ui.nuxt.com/pro)
 
-- [Live demo](https://nuxt-ui-pro-starter.vercel.app)
-- [Play on Stackblitz](https://stackblitz.com/github/nuxt-ui-pro/starter)
-- [Documentation](https://ui.nuxt.com/pro/guide)
+## This was initialy based/forked on Nuxt UI Pro Starter
+
+This starter lets you get started with [Nuxt UI Pro](https://ui.nuxt.com/pro) quickly. Here is the [Starter](https://github.com/nuxt-ui-pro/starter)
 
 ## Setup
 
