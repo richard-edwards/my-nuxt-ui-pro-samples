@@ -1,20 +1,20 @@
 <script setup lang="ts">
-import { z } from 'zod';
-import type { FormSubmitEvent } from '#ui/types';
+import { z } from 'zod'
+import type { FormSubmitEvent } from '#ui/types'
 
 const profileSchema = z.object({
   name: z.string().min(5, 'Name is too short').max(15, 'Name is too long'),
-});
+})
 
 type ProfileSchema = z.output<typeof profileSchema>;
 
 const state = reactive({
   name: undefined,
-});
+})
 
 async function onSubmit(event: FormSubmitEvent<ProfileSchema>) {
   // Do something with data
-  console.log(event.data);
+  console.log(event.data)
 }
 </script>
 <template>
@@ -27,7 +27,9 @@ async function onSubmit(event: FormSubmitEvent<ProfileSchema>) {
         <UInput v-model="state.name" placeholder="Your account name" />
       </UFormGroup>
 
-      <UButton type="submit" class="mt-4"> Save </UButton>
+      <UButton type="submit" class="mt-4">
+        Save
+      </UButton>
     </UForm>
   </UContainer>
 </template>

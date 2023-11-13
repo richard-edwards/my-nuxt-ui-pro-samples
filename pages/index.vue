@@ -16,13 +16,13 @@ const links = [
     to: '/input-simple-zod',
     icon: 'i-heroicons-home',
   },
-];
+]
 </script>
 <template>
   <ULandingHero
     title="My Nuxt-UI Samples"
     description="Just a few samples I have for troubleshooting, current best practice."
   >
-    <UVerticalNavigation :links="links"
-  /></ULandingHero>
+    <UVerticalNavigation :links="links" />
+  </ULandingHero>
 </template>
