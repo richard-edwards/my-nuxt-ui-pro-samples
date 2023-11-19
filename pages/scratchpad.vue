@@ -3,15 +3,18 @@ import { z } from 'zod'
 import type { FormSubmitEvent } from '#ui/types'
 
 const schema = z.object({
-  email: z.string().email('Invalid email'),
-  password: z.string().min(8, 'Must be at least 8 characters'),
-})
+    password: z.string().min(8),
+    confirmPassword: z.string().min(8),
+  }).refine((data) => data.password === data.confirmPassword,{
+    message: "Passwords don't match",
+    path: ["confirmPassword"],
+    })
 
 type Schema = z.output<typeof schema>;
 
 const state = reactive({
-  email: undefined,
   password: undefined,
+  confirmPassword: undefined
 })
 
 async function onSubmit(event: FormSubmitEvent<Schema>) {
@@ -28,15 +31,15 @@ async function onSubmit(event: FormSubmitEvent<Schema>) {
     <UDivider />
 
     <UForm :schema="schema" :state="state" @submit="onSubmit">
-      <UFormGroup label="Email" name="email">
-        <UInput v-model="state.email" />
-      </UFormGroup>
-
       <UFormGroup label="Password" name="password">
         <UInput v-model="state.password" type="password" />
       </UFormGroup>
 
-      <UButton type="submit">
+      <UFormGroup label="Confirm" name="confirmPassword">
+        <UInput v-model="state.confirmPassword" type="password" />
+      </UFormGroup>
+
+      <UButton type="submit" class="mt-4">
         Submit
       </UButton>
     </UForm>
