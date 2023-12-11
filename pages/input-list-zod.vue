@@ -22,8 +22,8 @@
   const phoneListSchema = z.object({
     items: z.array(
       z.object({
-        name: z.string().min(1),
-        number: z.string().regex(phoneRegex, 'Invalid Number!')
+        name: z.string().min(1, 'Name must be at least 1 character'),
+        number: z.string().regex(phoneRegex, 'Phone Number is invalid')
       })
     )
   })
@@ -32,15 +32,19 @@
   async function onSubmit(event: FormSubmitEvent<PhoneListSchema>) {
     // Do something with data
     console.log(event.data)
+    alert(JSON.stringify(event.data))
+
   }
 </script>
 <template>
-  <UContainer class="prose">
-    <h3>Sample Notes</h3>
-    <b>List of names/phone #'s verified by zod schema</b>
+  <UContainer class="prose my-3">
+    <h2>List of names/phone #'s verified by zod schema</h2>
     <p>
-      Validation: Name should be at least 1 character, number should be a valid
-      phone number (based on regex)
+      <ul>
+        <li>Name should be at least 1 character</li>
+        <li>Number should be a valid phone number (based on regex)</li>
+        <li>Save button is disabled if data not valid based on schema</li>
+      </ul>
     </p>
     <UDivider />
     <UForm
@@ -60,8 +64,9 @@
           <tr
             v-for="(item, index) in state.items"
             :key="index"
+            class="even:bg-blue-50 odd:bg-blue-100"
           >
-            <td>
+            <td class="px-2">
               <UFormGroup :name="`items.${index}.name`">
                 <UInput
                   v-model="item.name"
@@ -107,6 +112,7 @@
       <UButton
         type="submit"
         class="mt-4"
+        :disabled="phoneListSchema.safeParse(state).success === false"
       >
         Save
       </UButton>
