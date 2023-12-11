@@ -117,5 +117,13 @@
         Save
       </UButton>
     </UForm>
+    <UCard>
+      <div>
+        <h3>State</h3>
+        <pre> {{ JSON.stringify(state, null, 4)}}</pre>
+        <h3>Validation</h3>
+        <pre> {{ JSON.stringify(phoneListSchema.safeParse(state), null, 4) }}</pre>
+      </div>
+    </UCard>
   </UContainer>
 </template>
