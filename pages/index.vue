@@ -1,22 +1,27 @@
 <script setup>
-const links = [
-  {
-    label: 'Scratchpad - Anything goes',
-    to: '/scratchpad',
-    icon: 'i-heroicons-trash',
-    badge: 'Testing ground',
-  },
-  {
-    label: 'Select Menu - Select a name',
-    to: '/selectmenu',
-    icon: 'i-heroicons-home',
-  },
-  {
-    label: 'Input w/ Validation (Zod)',
-    to: '/input-simple-zod',
-    icon: 'i-heroicons-home',
-  },
-]
+  const links = [
+    {
+      label: 'Scratchpad - Anything goes',
+      to: '/scratchpad',
+      icon: 'i-heroicons-trash',
+      badge: 'Testing ground'
+    },
+    {
+      label: 'Select Menu - Select a name',
+      to: '/selectmenu',
+      icon: 'i-heroicons-home'
+    },
+    {
+      label: 'Input w/ Validation (Zod)',
+      to: '/input-simple-zod',
+      icon: 'i-heroicons-home'
+    },
+    {
+      label: 'Input List w/ Validation (Zod)',
+      to: '/input-list-zod',
+      icon: 'i-heroicons-home'
+    }
+  ]
 </script>
 <template>
   <ULandingHero
