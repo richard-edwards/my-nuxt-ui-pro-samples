@@ -20,6 +20,11 @@
       label: 'Input List w/ Validation (Zod)',
       to: '/input-list-zod',
       icon: 'i-heroicons-home'
+    },
+    {
+      label: 'Table with Dynamic Columns',
+      to: '/table-dynamic-columns',
+      icon: 'i-heroicons-table-cells'
     }
   ]
 </script>
