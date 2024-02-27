@@ -33,19 +33,17 @@ async function onSubmit(event: FormSubmitEvent<ProfileSchema>) {
         <UInput v-model="state.name" placeholder="Your account name" />
       </UFormGroup>
 
-      <UButton type="submit" class="mt-4"
-       :disabled="profileSchema.safeParse(state).success === false">
+      <UButton type="submit" class="mt-4" :disabled="profileSchema.safeParse(state).success === false">
         Save
       </UButton>
     </UForm>
     <UCard>
       <div>
         <h3>State</h3>
-        <pre> {{ JSON.stringify(state, null, 4)}}</pre>
+        <pre> {{ JSON.stringify(state, null, 4) }}</pre>
         <h3>Validation</h3>
         <pre> {{ JSON.stringify(profileSchema.safeParse(state), null, 4) }}</pre>
       </div>
     </UCard>
-
   </UContainer>
 </template>
